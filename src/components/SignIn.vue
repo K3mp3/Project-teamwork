@@ -2,15 +2,34 @@
 
 </script>
 <template>
+    <form @submit.prevent>
+        <div class="account-container">
+            <h1>Sign in</h1>
+            <label for="uname" class="visually-hidden">Username </label>
+            <input type="text" id="uname" name="uname" placeholder="Username" class="left-input">
+
+            <label for="email" class="visually-hidden">Email </label>
+            <input type="email" id="email" name="email" placeholder="Email" class="left-input">
+
+            <label for="pword" class="visually-hidden">Password </label>
+            <input type="password" id="pword" name="pword" placeholder="password" class="left-input">
+            
+            <button>Sing in</button>
+        </div>
+    </form>
+
     <form>
-        <label for="uname" class="visually-hidden">Username </label>
-        <input type="text" id="uname" name="uname" placeholder="Username">
+        <div class="account-container">
+            <h1>Sign in</h1>
+            <label for="uname" class="visually-hidden">Username </label>
+            <input type="text" id="uname" name="uname" placeholder="Username" class="right-input">
 
-        <label for="email" class="visually-hidden">Email </label>
-        <input type="email" id="email" name="email" placeholder="Email">
+            <label for="email" class="visually-hidden">Email </label>
+            <input type="email" id="email" name="email" placeholder="Email" class="right-input">
 
-        <label for="pword" class="visually-hidden">Password </label>
-        <input type="password" id="pword" name="pword" placeholder="password">
+            <label for="pword" class="visually-hidden">Password </label>
+            <input type="password" id="pword" name="pword" placeholder="password" class="right-input">
+        </div>
     </form>
 </template>
 <style scoped>
@@ -34,14 +53,58 @@ form {
     border: 0 !important;
 }
 
+.account-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+h1 {
+    color: #eeeeee;
+}
+
 input {
-    width: 70%;
+    width: 100%;
     height: 40px;
     margin: auto;
     border: none;
     border-radius: 10px;
     box-sizing: border-box;
     padding-left: 10px;
+    background-color: #363030;   
+    color: #eeeeee;
+}
+
+.left-input:focus {
+    outline: 1px solid #da5a56;
+    transition: all 0.5s;
+    background-color: #292424;
+    /*linear-gradient(to right, #da5a56 0%, #bc6ff0 100%) */ 
+}
+
+.right-input:focus {
+    outline: 1px solid #bc6ff0;
+    transition: all 0.5s;
+    background-color: #292424;
+    /*linear-gradient(to right, #da5a56 0%, #bc6ff0 100%) */ 
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
     background-color: #ebebeb;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ebebeb;
+    cursor: pointer;
 }
 </style>

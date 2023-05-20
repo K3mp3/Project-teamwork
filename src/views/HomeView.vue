@@ -24,11 +24,12 @@
     }
 
     .sign-in-form {
-        width: 350px;
+        width: 800px;
         height: 450px;
         background-color: #292424;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        border-radius: 20px;
     }
 </style>
