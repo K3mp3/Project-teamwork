@@ -19,16 +19,8 @@
     </form>
 
     <form>
-        <div class="account-container">
-            <h1>Sign in</h1>
-            <label for="uname" class="visually-hidden">Username </label>
-            <input type="text" id="uname" name="uname" placeholder="Username" class="right-input">
-
-            <label for="email" class="visually-hidden">Email </label>
-            <input type="email" id="email" name="email" placeholder="Email" class="right-input">
-
-            <label for="pword" class="visually-hidden">Password </label>
-            <input type="password" id="pword" name="pword" placeholder="password" class="right-input">
+        <div class="profile-picture-container">
+            <p>Upload a profile picture</p>
         </div>
     </form>
 </template>
@@ -54,10 +46,21 @@ form {
 }
 
 .account-container {
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+.profile-picture-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    border: 1px solid #bc6ff0;
+    color: #eeeeee;
+    border-radius: 20px;
 }
 
 h1 {
