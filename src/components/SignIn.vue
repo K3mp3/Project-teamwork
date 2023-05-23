@@ -1,18 +1,28 @@
 <script setup lang="ts">
+    import { ref } from 'vue';
 
+    const username = ref('');
+    const password = ref('');
+    const email = ref("");
+
+    function handleSignInRequest() {
+        console.log('Username:', username.value);
+        console.log("email:", email.value);
+        console.log('Password:', password.value)
+}
 </script>
 <template>
-    <form @submit.prevent>
+    <form @submit.prevent="handleSignInRequest">
         <div class="account-container">
             <h1>Sign in</h1>
             <label for="uname" class="visually-hidden">Username </label>
-            <input type="text" id="uname" name="uname" placeholder="Username" class="left-input">
+            <input type="text" id="uname" name="uname" v-model="username" placeholder="Username" class="left-input">
 
             <label for="email" class="visually-hidden">Email </label>
-            <input type="email" id="email" name="email" placeholder="Email" class="left-input">
+            <input type="email" id="email" name="email" v-model="email" placeholder="Email" class="left-input">
 
             <label for="pword" class="visually-hidden">Password </label>
-            <input type="password" id="pword" name="pword" placeholder="password" class="left-input">
+            <input type="password" id="pword" name="pword" v-model="password" placeholder="password" class="left-input">
             
             <button>Sing in</button>
         </div>
