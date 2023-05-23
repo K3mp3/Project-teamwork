@@ -31,6 +31,7 @@
     <form>
         <div class="profile-picture-container">
             <p>Upload a profile picture</p>
+            <input type="file">
         </div>
     </form>
 </template>
@@ -77,7 +78,7 @@ h1 {
     color: #eeeeee;
 }
 
-input {
+.left-input {
     width: 100%;
     height: 40px;
     margin: auto;
