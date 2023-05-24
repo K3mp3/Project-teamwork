@@ -1,28 +1,30 @@
 <script setup lang="ts">
+    import type { IUserSignIn } from '@/models/IUserSignIn';
     import { ref } from 'vue';
 
-    const username = ref('');
-    const password = ref('');
-    const email = ref("");
+    const user = ref<IUserSignIn>({username: "", email: "", password: ""})
+
+    const emits = defineEmits<{ (e: "signIn", username: string, email: string, password: string): void }>();
 
     function handleSignInRequest() {
-        console.log('Username:', username.value);
-        console.log("email:", email.value);
-        console.log('Password:', password.value)
-}
+        console.log("user", user.value);
+
+        emits ('signIn', user.value.username, user.value.email, user.value.password);
+    }
 </script>
+
 <template>
     <form @submit.prevent="handleSignInRequest">
         <div class="account-container">
             <h1>Sign in</h1>
             <label for="uname" class="visually-hidden">Username </label>
-            <input type="text" id="uname" name="uname" v-model="username" placeholder="Username" class="left-input">
+            <input type="text" id="uname" name="uname" v-model="user.username" placeholder="Username" class="left-input">
 
             <label for="email" class="visually-hidden">Email </label>
-            <input type="email" id="email" name="email" v-model="email" placeholder="Email" class="left-input">
+            <input type="email" id="email" name="email" v-model="user.email" placeholder="Email" class="left-input">
 
             <label for="pword" class="visually-hidden">Password </label>
-            <input type="password" id="pword" name="pword" v-model="password" placeholder="password" class="left-input">
+            <input type="password" id="pword" name="pword" v-model="user.password" placeholder="password" class="left-input">
             
             <button>Sing in</button>
         </div>
@@ -35,8 +37,9 @@
         </div>
     </form>
 </template>
+
 <style scoped>
-form {
+    form {
     width: 100%;
     display: flex;
     flex-direction: column;
