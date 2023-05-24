@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import SignIn from '@/components/SignIn.vue';
+  import SignIn from '@/components/SignInFormHome.vue';
 </script>
 
 <template>
