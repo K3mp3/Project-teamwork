@@ -48,7 +48,7 @@ import router from '@/router';
 
 <style scoped>
     form {
-    width: 100%;
+    width: 450px;
     display: flex;
     flex-direction: column;
     gap: 40px;

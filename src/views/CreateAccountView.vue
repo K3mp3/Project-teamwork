@@ -22,7 +22,7 @@ import CreateAccountView from '@/components/CreateAccountView.vue';
     }
 
     .sign-in-form {
-        background-color: #db1414;
+        background-color: #292424;
         padding: 40px 20px 50px 20px;
         display: flex;
         justify-content: space-between;

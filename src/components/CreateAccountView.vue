@@ -1,5 +1,6 @@
 <script setup lang="ts">
-    import type CreateAccountFormVue from './CreateAccountForm.vue';
+    import CreateAccountFormVue from './CreateAccountForm.vue';
+    import SignInFormVue from './SignInForm.vue';
 
     function sendUserData(username: string, email: string, password: string) {
         console.log("username", username);
@@ -25,6 +26,8 @@
         .then(data => {
             if (data.username) {
                 console.log("data", data);
+            } else {
+                alert("We couldn't find a");
             }
         })
     }
