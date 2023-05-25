@@ -11,6 +11,10 @@
 
         emits ('signIn', user.value.username, user.value.email, user.value.password);
     }
+
+    function sendUserToCreateAccountRouter() {
+        console.log("create account");
+    }
 </script>
 
 <template>
@@ -30,7 +34,7 @@
         </div>
     </form>
 
-    <form>
+    <form @submit.prevent="sendUserToCreateAccountRouter">
         <div class="profile-picture-container">
             <h1>Hi there!</h1>
             <p>Don't you have an account? No worries, just click on the button and create one.</p>
