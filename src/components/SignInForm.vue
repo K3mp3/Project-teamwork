@@ -1,39 +1,45 @@
 <script setup lang="ts">
+    import type { IUserSignIn } from '@/models/IUserSignIn';
+    import { ref } from 'vue';
 
+    const user = ref<IUserSignIn>({username: "", email: "", password: ""})
+
+    const emits = defineEmits<{ (e: "signIn", username: string, email: string, password: string): void }>();
+
+    function handleSignInRequest() {
+        console.log("user", user.value);
+
+        emits ('signIn', user.value.username, user.value.email, user.value.password);
+    }
 </script>
+
 <template>
-    <form @submit.prevent>
+    <form @submit.prevent="handleSignInRequest">
         <div class="account-container">
             <h1>Sign in</h1>
             <label for="uname" class="visually-hidden">Username </label>
-            <input type="text" id="uname" name="uname" placeholder="Username" class="left-input">
+            <input type="text" id="uname" name="uname" v-model="user.username" placeholder="Username" class="left-input">
 
             <label for="email" class="visually-hidden">Email </label>
-            <input type="email" id="email" name="email" placeholder="Email" class="left-input">
+            <input type="email" id="email" name="email" v-model="user.email" placeholder="Email" class="left-input">
 
             <label for="pword" class="visually-hidden">Password </label>
-            <input type="password" id="pword" name="pword" placeholder="password" class="left-input">
+            <input type="password" id="pword" name="pword" v-model="user.password" placeholder="password" class="left-input">
             
             <button>Sing in</button>
         </div>
     </form>
 
     <form>
-        <div class="account-container">
-            <h1>Sign in</h1>
-            <label for="uname" class="visually-hidden">Username </label>
-            <input type="text" id="uname" name="uname" placeholder="Username" class="right-input">
-
-            <label for="email" class="visually-hidden">Email </label>
-            <input type="email" id="email" name="email" placeholder="Email" class="right-input">
-
-            <label for="pword" class="visually-hidden">Password </label>
-            <input type="password" id="pword" name="pword" placeholder="password" class="right-input">
+        <div class="profile-picture-container">
+            <p>Upload a profile picture</p>
+            <input type="file">
         </div>
     </form>
 </template>
+
 <style scoped>
-form {
+    form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -54,17 +60,28 @@ form {
 }
 
 .account-container {
-    width: 60%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+.profile-picture-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    border: 1px solid #bc6ff0;
+    color: #eeeeee;
+    border-radius: 20px;
 }
 
 h1 {
     color: #eeeeee;
 }
 
-input {
+.left-input {
     width: 100%;
     height: 40px;
     margin: auto;

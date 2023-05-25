@@ -1,14 +1,14 @@
 <script setup lang="ts">
-  import SignIn from '@/components/SignIn.vue';
+  import SignInView from '@/components/SignInView.vue';
+  import type SignInFormUserInformationVue from '@/components/SignInFormUserInformation.vue';
+import SignInForm from '@/components/SignInForm.vue';
 </script>
 
 <template>
   <main>
       <div class="sign-in-form-container">
         <form class="sign-in-form"> 
-          <SignIn>
-
-          </SignIn>
+         <SignInView></SignInView>
         </form>
       </div>
   </main>
