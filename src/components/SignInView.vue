@@ -23,7 +23,9 @@
         })
         .then(res => res.json())
         .then(data => {
-            console.log("data", data);
+            if (data.username) {
+                console.log("data", data);
+            }
         })
     }
 </script>

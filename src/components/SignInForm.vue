@@ -33,7 +33,9 @@
     <form>
         <div class="profile-picture-container">
             <h1>Hi there!</h1>
-            <p>Don't you have an account? No worries, just fill in your information and click the sign in button and you'll be asked to create one.</p>
+            <p>Don't you have an account? No worries, just click on the button and create one.</p>
+
+            <button>Create ccount</button>
         </div>
     </form>
 </template>

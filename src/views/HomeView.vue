@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import SignInView from '@/components/SignInView.vue';
-  import type SignInFormUserInformationVue from '@/components/SignInFormUserInformation.vue';
-import SignInForm from '@/components/SignInForm.vue';
+  import SignInForm from '@/components/SignInForm.vue';
 </script>
 
 <template>
@@ -24,9 +23,8 @@ import SignInForm from '@/components/SignInForm.vue';
     }
 
     .sign-in-form {
-        width: 800px;
-        height: 450px;
         background-color: #292424;
+        padding: 40px 20px 50px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
