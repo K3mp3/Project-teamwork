@@ -4,7 +4,7 @@
 
     const user = ref<IUserSignIn>({username: "", email: "", password: ""})
 
-    const emits = defineEmits<{ (e: "signIn", username: string, email: string, password: string): void }>();
+    const emits = defineEmits<{ (e: "signIn", username: string, email: string, password: string,): void }>();
 
     function handleSignInRequest() {
         console.log("user", user.value);
@@ -32,8 +32,8 @@
 
     <form>
         <div class="profile-picture-container">
-            <p>Upload a profile picture</p>
-            <input type="file">
+            <h1>Hi there!</h1>
+            <p>Don't you have an account? No worries, just fill in your information and click the sign in button and you'll be asked to create one.</p>
         </div>
     </form>
 </template>
@@ -75,6 +75,8 @@
     border: 1px solid #bc6ff0;
     color: #eeeeee;
     border-radius: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 h1 {
