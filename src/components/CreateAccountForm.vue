@@ -1,15 +1,15 @@
 <script setup lang="ts">
-    import { ICreateAccunt } from '@/models/ICreateAccunt';
+    import type { ICreateAccunt } from '@/models/ICreateAccunt';
     import { ref } from 'vue';
 
     const user = ref<ICreateAccunt>({createUsername: "", createEmail: "", CreatePassword: ""})
 
-    const emits = defineEmits<{ (e: "signIn", username: string, email: string, password: string,): void }>();
+    const emits = defineEmits<{ (e: "createaccount", username: string, email: string, password: string,): void }>();
 
     function handleSignInRequest() {
-        console.log("user", user.value);
+        console.log("createuser", user.value);
 
-        emits ('signIn', user.value.createUsername, user.value.createEmail, user.value.CreatePassword);
+        emits ('createaccount', user.value.createUsername, user.value.createEmail, user.value.CreatePassword);
     }
 
     function sendUserToCreateAccountRouter() {

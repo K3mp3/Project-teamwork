@@ -1,39 +1,36 @@
 <script setup lang="ts">
     import CreateAccountFormVue from './CreateAccountForm.vue';
-    import SignInFormVue from './SignInForm.vue';
 
-    function sendUserData(username: string, email: string, password: string) {
+    function createUserAccount(username: string, email: string, password: string) {
         console.log("username", username);
         console.log("email", email);
         console.log("password", password);
 
-        const loginUser = {
+        const createUser = {
             username: username,
             email: email,
             password: password
         }
 
-        console.log("loginUser", loginUser);
+        console.log("createUser", createUser);
 
-        fetch("http://localhost:3000/users/loginuser", {
+        fetch("http://localhost:3000/users/createuser", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(loginUser)
+            body: JSON.stringify(createUser)
         })
         .then(res => res.json())
-        .then(data => {
-            if (data.username) {
-                console.log("data", data);
-            } else {
-                alert("We couldn't find a");
-            }
+        .then(createUser => {
+            console.log("data", createUser);
+            alert("Welcome, your account is now created. Please sign in to access all your information by reloading this webpage.");
         })
-    }
+        .catch(err => console.log("err", err));
+        }
 </script>
 <template>
-    <CreateAccountFormVue @signIn="sendUserData"></CreateAccountFormVue>
+    <CreateAccountFormVue @createaccount="createUserAccount"></CreateAccountFormVue>
 </template>
 <style scoped>
 
