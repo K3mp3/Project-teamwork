@@ -24,7 +24,8 @@
         .then(res => res.json())
         .then(createUser => {
             console.log("data", createUser);
-            alert("Welcome, your account is now created. Please sign in to access all your information by reloading this webpage.");
+            alert(createUser);
+            //alert("Welcome, your account is now created. Please sign in to access all your information by reloading this webpage.");
         })
         .catch(err => console.log("err", err));
         }
