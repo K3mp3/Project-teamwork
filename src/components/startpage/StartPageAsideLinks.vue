@@ -1,15 +1,15 @@
 <script setup lang="ts">
     const links: string[] = ["Create room", "About", "Contact", "FAQ"];
 
-    function handleClick(link: string) {
-        const trimmedLink = link.trim().replace(/\s/g, '');
-        console.log("link", trimmedLink.toLowerCase());
+    function getRoute(link: string) {
+        const trimmedLink = link.trim().replace(/\s/g, '').toLowerCase();
+        return `/${trimmedLink}`;
     }
 </script>
 <template>
     <aside>
         <ul>
-            <li v-for="link in links"><a @click="handleClick(link)">{{ link }}</a></li>
+            <li v-for="link in links"><router-link :to="getRoute(link)" class="router-link">{{ link }}</router-link></li>
         </ul>
     </aside>
 </template>
