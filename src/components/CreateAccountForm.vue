@@ -1,36 +1,34 @@
 <script setup lang="ts">
-    import type { IUserSignIn } from '@/models/IUserSignIn';
-import router from '@/router';
+    import type { ICreateAccunt } from '@/models/ICreateAccunt';
     import { ref } from 'vue';
 
-    const user = ref<IUserSignIn>({username: "", email: "", password: ""})
+    const user = ref<ICreateAccunt>({createUsername: "", createEmail: "", CreatePassword: ""})
 
-    const emits = defineEmits<{ (e: "signIn", username: string, email: string, password: string,): void }>();
+    const emits = defineEmits<{ (e: "createaccount", username: string, email: string, password: string,): void }>();
 
     function handleSignInRequest() {
-        console.log("user", user.value);
+        console.log("createuser", user.value);
 
-        emits ('signIn', user.value.username, user.value.email, user.value.password);
+        emits ('createaccount', user.value.createUsername, user.value.createEmail, user.value.CreatePassword);
     }
 
     function sendUserToCreateAccountRouter() {
         console.log("create account");
-        router.push("/createaccount");
     }
 </script>
 
 <template>
     <form @submit.prevent="handleSignInRequest">
         <div class="account-container">
-            <h1>Sign in</h1>
+            <h1>Create your account</h1>
             <label for="uname" class="visually-hidden">Username </label>
-            <input type="text" id="uname" name="uname" v-model="user.username" placeholder="Username" class="left-input">
+            <input type="text" id="uname" name="uname" v-model="user.createUsername" placeholder="Username" class="left-input">
 
             <label for="email" class="visually-hidden">Email </label>
-            <input type="email" id="email" name="email" v-model="user.email" placeholder="Email" class="left-input">
+            <input type="email" id="email" name="email" v-model="user.createEmail" placeholder="Email" class="left-input">
 
             <label for="pword" class="visually-hidden">Password </label>
-            <input type="password" id="pword" name="pword" v-model="user.password" placeholder="password" class="left-input">
+            <input type="password" id="pword" name="pword" v-model="user.CreatePassword" placeholder="password" class="left-input">
             
             <button>Sing in</button>
         </div>
@@ -38,10 +36,8 @@ import router from '@/router';
 
     <form @submit.prevent="sendUserToCreateAccountRouter">
         <div class="profile-picture-container">
-            <h1>Hi there!</h1>
-            <p>Don't you have an account? No worries, just click on the button and create one.</p>
-
-            <button>Create ccount</button>
+            <h1>Welcome</h1>
+            <p>Did you know that JavaScript is the third most popular programming language in the world?</p>
         </div>
     </form>
 </template>

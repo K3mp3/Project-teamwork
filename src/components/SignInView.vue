@@ -25,6 +25,8 @@
         .then(data => {
             if (data.username) {
                 console.log("data", data);
+            } else {
+                alert("We couldn't find a");
             }
         })
     }
