@@ -31,9 +31,9 @@ import StartPageCreateRoom from './StartPageCreateRoom.vue';
 
     .room-container {
         width: 100%;
-        
         padding: 20px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }

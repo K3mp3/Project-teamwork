@@ -21,7 +21,7 @@
 </script>
 <template>
     <div class="backlog-visual-container">
-
+        <th v-for="square in backlogVisual"></th>
     </div>
     <form>
         <h1>Create a room for your team</h1>
@@ -35,5 +35,11 @@
         grid-template-rows: repeat(3, 150px);
         place-items: center;
         gap: 4px;
+    }
+
+    th {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #000;
     }
 </style>
