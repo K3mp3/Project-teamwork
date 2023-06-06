@@ -7,15 +7,13 @@
     }
 </script>
 <template>
-    <ul>
-        <li v-for="link in links"><router-link :to="getRoute(link)" class="router-link">{{ link }}</router-link></li>
-    </ul>
+    <aside>
+        <ul>
+            <li v-for="link in links"><router-link :to="getRoute(link)" class="router-link">{{ link }}</router-link></li>
+        </ul>
+    </aside>
 </template>
 <style scoped>
-    ul {
-        padding: 0;
-    }
-
     li {
         list-style: none;
         margin: 40px 0;

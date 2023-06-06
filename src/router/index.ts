@@ -23,6 +23,7 @@ const router = createRouter({
       name: 'startview',
       component: StartView
     },
+    
   ]
 })
 
